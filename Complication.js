@@ -3,9 +3,17 @@
 (function () {
   require('https://raw.githubusercontent.com/rozek/banglejs-2-drawmoonphase/main/drawMoonPhase.js');
 
+  const MillisPerDay   = 86400000;
+  const synodicalMonth = 29.530588;
+
   exports.draw = function draw (x,y, Radius, Settings) {
     let today = new Date();
-    let Phase = (today/86400000 - new Date(2009,11,31, 20,12,36)/86400000) % 29.530588;
+    let Phase = (
+      (today/MillisPerDay - new Date(2009,11,31, 20,12,36)/MillisPerDay) % synodicalMonth
+    ) / synodicalMonth;
+
+    g.setColor(Settings.Background === 'Theme' ? g.theme.bg : Settings.Background || '#000000');
+    g.fillCircle(x,y, Radius);
 
     let leftFactor, rightFactor;
     switch (true) {
@@ -17,7 +25,8 @@
         rightFactor = 1 - 4*Phase;
         break;
       case (Phase === 0.5):                                          // new moon
-        g.drawCircle(x,y, Radius);
+        g.setColor(Settings.Foreground === 'Theme' ? g.theme.fg : Settings.Foreground || '#FFFFFF');
+        g.drawCircle(x,y, Radius-1);
         break;
       case (Phase > 0.5):                                         // waxing moon
         leftFactor  = -1 + 4*(Phase-0.5);
@@ -25,7 +34,9 @@
         break;
     }
 
-    g.setColor(Settings.Foreground === 'Theme' ? g.theme.fg : Settings.Foreground || '#000000');
-    g.drawMoonPhase(x,y, Radius, leftFactor,rightFactor);
+print('Phase',Phase,'leftFactor',leftFactor,'rightFactor',rightFactor);
+
+    g.setColor(Settings.Foreground === 'Theme' ? g.theme.fg : Settings.Foreground || '#FFFFFF');
+    g.drawMoonPhase(x,y, Radius-1, leftFactor,rightFactor);
   };
 })();
