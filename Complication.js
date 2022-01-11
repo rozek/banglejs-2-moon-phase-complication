@@ -34,8 +34,6 @@
         break;
     }
 
-print('Phase',Phase,'leftFactor',leftFactor,'rightFactor',rightFactor);
-
     g.setColor(Settings.Foreground === 'Theme' ? g.theme.fg : Settings.Foreground || '#FFFFFF');
     g.drawMoonPhase(x,y, Radius-1, leftFactor,rightFactor);
   };
