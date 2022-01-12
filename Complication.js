@@ -1,6 +1,6 @@
 // see https://www.starpage.de/content/themen/2010_08_mondphasenberechnung/
 
-(function () {
+;(function () {
   require('https://raw.githubusercontent.com/rozek/banglejs-2-drawmoonphase/main/drawMoonPhase.js');
 
   const MillisPerDay   = 86400000;
