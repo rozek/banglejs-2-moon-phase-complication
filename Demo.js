@@ -7,5 +7,6 @@
       r:require('https://raw.githubusercontent.com/rozek/banglejs-2-moon-phase-complication/main/Complication.js'),
     }
   },{
-    Foreground:'#FFFFFF', Background:'#000000', Seconds:'#FFFF00'
+    Foreground:'#FFFFFF', Background:'#000000', Seconds:'#FFFF00',
+    withDots:true
   });
