@@ -12,6 +12,8 @@
       (today/MillisPerDay - new Date(2009,11,31, 20,12,36)/MillisPerDay) % synodicalMonth
     ) / synodicalMonth;
 
+    if (Phase < 0) { Phase += 1; } // just in case that date is completely wrong
+
     g.setColor(Settings.Background === 'Theme' ? g.theme.bg : Settings.Background || '#000000');
     g.fillCircle(x,y, Radius);
 
