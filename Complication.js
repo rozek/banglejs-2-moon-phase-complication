@@ -20,15 +20,16 @@
       case (Phase === 0):                                           // full moon
         leftFactor = rightFactor = 1.0;
         break;
-      case (Phase < 0.5):                                         // waning moon
+      case (Phase < 0.483):                                       // waning moon
         leftFactor  = 1.0;
         rightFactor = 1 - 4*Phase;
         break;
-      case (Phase === 0.5):                                          // new moon
+      case (Phase <= 0.517):                                         // new moon
         g.setColor(Settings.Foreground === 'Theme' ? g.theme.fg : Settings.Foreground || '#FFFFFF');
         g.drawCircle(x,y, Radius-1);
         break;
-      case (Phase > 0.5):                                         // waxing moon
+      default:
+//    case (Phase > 0.517):                                       // waxing moon
         leftFactor  = -1 + 4*(Phase-0.5);
         rightFactor = 1.0;
         break;
