@@ -1,8 +1,8 @@
 # banglejs-2-moon-phase-complication #
 
-draws the current moon phase as a complication for an analog clock on a Bangle.js 2
+draws the current moon phase (for the northern hemisphere) as a complication for an analog clock on a Bangle.js 2
 
-This module displays a small graphics symbolizing the current moon phase as a complication for an analog clock on a [Bangle.js 2](https://www.espruino.com/Bangle.js2). It is based on an idea of forum user [HilmarSt](http://forum.espruino.com/profiles/182487/) (see this [discussion](http://forum.espruino.com/conversations/371330/))
+This module displays a small graphics symbolizing the current moon phase (for the northern hemisphere) as a complication for an analog clock on a [Bangle.js 2](https://www.espruino.com/Bangle.js2). It is based on an idea of forum user [HilmarSt](http://forum.espruino.com/profiles/182487/) (see this [discussion](http://forum.espruino.com/conversations/371330/))
 
 ![](Demo.png)
 
