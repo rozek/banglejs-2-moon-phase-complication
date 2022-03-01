@@ -10,7 +10,7 @@ This module displays a small graphics symbolizing the current moon phase (for th
 
 Within a clock implementation, the module may be used as follows:
 
-```
+```javascript
 let Clockwork = require(...);
 Clockwork.windUp({
   complications: {
@@ -24,7 +24,7 @@ Clockwork.windUp({
 
 The following code shows a complete example for a (still simple) analog clock using this complication:
 
-```
+```javascript
 let Clockwork = require('https://raw.githubusercontent.com/rozek/banglejs-2-simple-clockwork/main/Clockwork.js');
 
 Clockwork.windUp({
